@@ -1,9 +1,3 @@
-/**
-* Template Name: Delicious - v4.7.1
-* Template URL: https://bootstrapmade.com/delicious-free-restaurant-bootstrap-theme/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 
 /*--------------------------------------------------------------
 # General
@@ -230,6 +224,14 @@ h1, h2, h3, h4, h5, h6 {
   top: 0;
   left: 100%;
   visibility: visible;
+}
+.section-algoritm-input {
+  display: contents;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+label {
+  display: grid;
 }
 @media (max-width: 1366px) {
   .navbar .dropdown .dropdown ul {
@@ -1017,8 +1019,27 @@ section {
   transition: 0.4s;
   border-radius: 50px;
 }
+.btn {
+  background: green;
+  border: 0;
+  padding: 10px 24px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 50px;
+  margin-top: 8px;
+}
+.btn:hover {
+  background: green;
+  border: 0;
+  padding: 10px 24px;
+  color: gray;
+  transition: 0.4s;
+  border-radius: 50px;
+  margin-top: 8px;
+}
 .book-a-table .php-email-form button[type=submit]:hover {
-  background: #ffa012;
+  background: red;
+  color: gray;
 }
 
 /*--------------------------------------------------------------
