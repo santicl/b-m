@@ -6,8 +6,12 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
   <title>B & M V.I.P</title>
-  <meta content="Bienvenidos a B & M, nosotros te brindamos servicios de calidad como: Bartender, Meseros para diferentes eventos" name="description">
-  <meta content="meseros cartagena, bartender cartagena, cuanto cobra un bartander en cartagena, como contratar un bartander, cuanto cobra un bartender, cuanto cobra un mesero, commo contratar un mesero en cartagena" name="keywords">
+  <meta
+    content="Bienvenidos a B & M, nosotros te brindamos servicios de calidad como: Bartender, Meseros para diferentes eventos"
+    name="description">
+  <meta
+    content="meseros cartagena, bartender cartagena, cuanto cobra un bartander en cartagena, como contratar un bartander, cuanto cobra un bartender, cuanto cobra un mesero, commo contratar un mesero en cartagena"
+    name="keywords">
   <meta property="og:image" content="https://vipbm.netlify.app/assets/img/slide/bartender.jpg">
 
   <!-- Favicons -->
@@ -32,7 +36,7 @@
 
 </head>
 
-<body>
+<body id="body">
 
   <!-- ======= Top Bar ======= -->
   <section id="topbar" class="d-flex align-items-center fixed-top topbar-transparent">
@@ -357,7 +361,7 @@
               </p>
             </div>
 
-            <div class="col-lg-3 col-md-6 info mt-4 mt-lg-0">
+            <div id="container-c" class="col-lg-3 col-md-6 info mt-4 mt-lg-0">
               <i class="bi bi-calculator"></i>
               <h4>Aqui aparecera el resultado del calculo:</h4>
               <p><strong>Presupuesto:</strong><br> <span id="result">Por ejemplo: <strong>$520.000 COP</strong></span>
@@ -367,14 +371,20 @@
           </div>
         </div>
 
-        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+        <form id="form" class="php-email-form">
           <div class="row">
             <div class="col-md-6 form-group">
               <label>
                 Ingresa El evento
                 <small>Por ejemplo: Boda...</small>
               </label>
-              <input type="text" name="event" class="form-control" id="event" placeholder="Nombre Evento" required>
+              <input list="event-name" type="text" name="event" class="form-control" id="event"
+                placeholder="Nombre Evento" required>
+              <datalist id="event-name">
+                <option value="Boda">Boda</option>
+                <option value="Despedida Soltero(a)">Despedida Soltero(a)</option>
+                <option value="Pasar el rato">Pasar el rato</option>
+              </datalist>
             </div>
             <div class="col-md-6 form-group mt-3 mt-md-0">
               <label>
@@ -396,12 +406,11 @@
             <label>
               Tipo de menu
             </label>
-            <input list="type-m" class="form-control" name="number-hour" id="number-hour" placeholder="Tipo menu"
-              required>
-              <datalist id="type-m">
-                <option value="Basico">Basico (Coteles Clasicos)</option>
-                <option value="Premium">Premium (Coteles Clasicos, Premium)</option>
-              </datalist>
+            <input list="type-m" class="form-control" name="type-menu" id="type-menu" placeholder="Tipo menu" required>
+            <datalist id="type-m">
+              <option value="Basico">Basico (Coteles Clasicos)</option>
+              <option value="Premium">Premium (Coteles Clasicos, Premium)</option>
+            </datalist>
           </div>
           <div class="form-group mt-3">
             <label>
@@ -409,22 +418,42 @@
             </label>
             <input list="type-services" class="form-control" name="services" id="services" placeholder="Servicio"
               required>
-              <datalist id="type-services">
-                <option value="Bartender">Bartender</option>
-                <option value="Mesero">Mesero</option>
-                <option value="Show Flair">Show Flair</option>
-                <option value="Cata Licores">Cata Licores</option>
-              </datalist>
+            <datalist id="type-services">
+              <option value="Bartender">Bartender</option>
+              <option value="Mesero">Mesero</option>
+              <option value="Show Flair">Show Flair</option>
+              <option value="Cata Licores">Cata Licores</option>
+            </datalist>
           </div>
           <div class="my-3">
             <div class="loading">Cargando</div>
             <div class="error-message"></div>
             <div class="sent-message">Tu mensaje se envio, Gracias!</div>
           </div>
-          <div class="text-center"><button type="submit">Calcular</button></div>
-          <div class="text-center"><a class="btn" href="https://api.whatsapp.com/send?phone=573162421339&text=Hola%20%F0%9F%98%80%F0%9F%98%84%2C%20deseo%20cotizar%20un%20evento...">Cotizar por WhatsApp</a></div>
+          <div id="calcular" class="text-center"><button type="button">Calcular</button></div>
+          <div class="text-center"><a class="btn"
+              href="https://api.whatsapp.com/send?phone=573162421339&text=Hola%20%F0%9F%98%80%F0%9F%98%84%2C%20deseo%20cotizar%20un%20evento...">Cotizar
+              por WhatsApp</a></div>
         </form>
 
+      </div>
+
+      <div class="overlay section-title" id="overlay">
+        <div class="popup" id="popup">
+          <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+          <h2 id="pre" style="visibility: hidden;">Resultado</h2>
+          <h2 id="pre-result" style="visibility: hidden;"></h2>
+          <div id="prev-pre">
+            <h3 id="cl">Calculando...</h3>
+            <div id="loader" class="lds-ellipsis">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+        </div>
+      </div>
       </div>
     </section><!-- End Tech B & M Section -->
 
@@ -973,6 +1002,8 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/bm-tech.js"></script>
+  <script src="assets/js/type.js" type="module"></script>
 
 </body>
 
