@@ -1221,7 +1221,7 @@ section {
 }
 
 div#container-c {
-  border-inline: solid 4px yellow;
+  border-inline: solid 4px #ffb03b;
 }
 
 .lds-ellipsis {
@@ -1237,7 +1237,7 @@ div#container-c {
   width: 13px;
   height: 13px;
   border-radius: 50%;
-  background: yellow;
+  background: #ffb03b;
   animation-timing-function: cubic-bezier(0, 1, 1, 0);
 }
 
