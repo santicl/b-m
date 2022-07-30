@@ -77,7 +77,7 @@ const popupContainer = (dataPrice) => {
           <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
           <h2>Se cerrara en:</h2>
           <div class="container-all">
-        <div class="circle" style="--color: yellow;">
+        <div class="circle" style="--color: #ffb03b;">
             <svg>
                 <circle cx="65" cy="65" r="65" />
                 <circle id="s" cx="65" cy="65" r="65" />
